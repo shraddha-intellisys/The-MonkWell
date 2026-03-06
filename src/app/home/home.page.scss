@@ -14,6 +14,7 @@
   --background: var(--soft-bg);
   color: var(--text-dark);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-y: auto;
 }
 
 .container {
@@ -441,12 +442,6 @@
   .benefits {
   list-style: none;
   padding: 0;
-  margin: 18px 0;
-}
-
-.benefits {
-  list-style: none;
-  padding: 0;
   margin: 18px 0 0;
 }
 
@@ -464,6 +459,57 @@
   }
   100% {
     transform: translateY(0px);
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-grid,
+  .feature-grid,
+  .products-grid,
+  .why-grid,
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-left h1 {
+    font-size: 2.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero-grid,
+  .feature-grid,
+  .products-grid,
+  .why-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-section,
+  .products-section,
+  .why-section {
+    padding: 60px 0;
+  }
+
+  .hero-left h1 {
+    font-size: 2.1rem;
+  }
+
+  .section-heading h2 {
+    font-size: 1.9rem;
+  }
+
+  .header-inner {
+    gap: 12px;
+  }
+
+  .product-bottom {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 }
