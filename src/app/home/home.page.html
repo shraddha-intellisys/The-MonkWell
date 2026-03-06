@@ -1,0 +1,155 @@
+<ion-content [fullscreen]="true" class="home-page">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">The MonkWell.</div>
+
+      <nav class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#products">Products</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#footer">Contact</a>
+      </nav>
+
+      <button class="primary-btn">Shop Now</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-left">
+        <p class="offer-tag">LIMITED TIME: HEALTHY SWEETNESS FOR EVERYDAY LIFE</p>
+        <h1>Natural Sweetness That Feels Modern, Clean & Delicious</h1>
+        <p class="hero-text">
+          Discover monk fruit based sweeteners and drink mixes designed for tea,
+          coffee, desserts, and a healthier daily lifestyle without compromise.
+        </p>
+
+        <div class="hero-buttons">
+          <button class="primary-btn">Explore Products</button>
+          <button class="secondary-btn">Learn More</button>
+        </div>
+
+        <div class="trust-badges">
+          <span *ngFor="let badge of trustBadges">{{ badge }}</span>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        
+          
+          <img src="assets/images/monk-wellness.png" class="wellness-image" alt="Monk Fruit Wellness" />
+          <h3>Monk Fruit Wellness</h3>
+          <p>Clean sweetness for tea, coffee, desserts, and active lifestyles.</p>
+        </div>
+      
+    </div>
+  </section>
+
+  <!-- Feature cards -->
+  <section class="feature-section">
+    <div class="container feature-grid">
+      <div class="feature-card" *ngFor="let item of features">
+        <ion-icon [name]="item.icon" class="feature-icon"></ion-icon>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="products-section" id="products">
+    <div class="container">
+      <div class="section-heading">
+        <p class="section-tag">OUR PRODUCTS</p>
+        <h2>Monk Fruit Based Everyday Essentials</h2>
+        <p>
+          Premium products crafted to bring healthy sweetness into your daily routine.
+        </p>
+      </div>
+
+      <div class="products-grid">
+        <div class="product-card" *ngFor="let product of products">
+          <div class="product-image-wrap">
+            <img [src]="product.image" [alt]="product.name" />
+            <span class="product-badge">{{ product.badge }}</span>
+          </div>
+
+          <div class="product-content">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.description }}</p>
+
+            <div class="product-bottom">
+              <span class="price">₹{{ product.price }}</span>
+              <button class="primary-btn small-btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why choose us -->
+  <section class="why-section" id="why-us">
+    <div class="container">
+      <div class="section-heading center">
+        <p class="section-tag">WHY CHOOSE US</p>
+        <h2>Modern Wellness with Better Sweetness</h2>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <ion-icon name="nutrition-outline" class="why-icon"></ion-icon>
+          <h3>Natural Alternative</h3>
+          <p>Designed for people who want sweetness with a cleaner lifestyle choice.</p>
+        </div>
+
+        <div class="why-card">
+          <ion-icon name="water-outline" class="why-icon"></ion-icon>
+          <h3>No Heavy Feeling</h3>
+          <p>Great for beverages and daily routines that feel lighter and fresher.</p>
+        </div>
+
+        <div class="why-card">
+          <ion-icon name="star-outline" class="why-icon"></ion-icon>
+          <h3>Premium Experience</h3>
+          <p>Better visual identity, better feel, and premium product presentation.</p>
+        </div>
+
+        <div class="why-card">
+          <ion-icon name="shield-checkmark-outline" class="why-icon"></ion-icon>
+          <h3>Conscious Living</h3>
+          <p>Made for users who want to make more mindful everyday food choices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>The MonkWell.</h3>
+        <p>
+          Sweetness reimagined for a healthier, cleaner, and more modern lifestyle.
+        </p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <p>Home</p>
+        <p>Products</p>
+        <p>Why Us</p>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <p>support@monkwell.com</p>
+        <p>+91 7066952032</p>
+      </div>
+    </div>
+  </footer>
+
+</ion-content>
