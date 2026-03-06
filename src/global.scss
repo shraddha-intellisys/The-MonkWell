@@ -4,4 +4,14 @@ body {
   padding: 0;
   background: #fffdf8;
   scroll-behavior: smooth;
+  overflow-y: auto !important;
+}
+
+body {
+  min-height: 100vh;
+}
+
+app-root {
+  display: block;
+  min-height: 100vh;
 }

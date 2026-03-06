@@ -1,6 +1,5 @@
-<ion-content [fullscreen]="true" class="home-page">
+<div class="home-page">
 
-  <!-- Header -->
   <header class="header">
     <div class="container header-inner">
       <div class="logo">The MonkWell.</div>
@@ -16,7 +15,6 @@
     </div>
   </header>
 
-  <!-- Hero -->
   <section class="hero-section" id="hero">
     <div class="container hero-grid">
       <div class="hero-left">
@@ -39,8 +37,11 @@
 
       <div class="hero-right">
         
-          
-          <img src="assets/images/monk-wellness.png" class="wellness-image" alt="Monk Fruit Wellness" />
+          <img
+            src="assets/images/monk-wellness.png"
+            class="wellness-image"
+            alt="Monk Fruit Wellness"
+          />
           <h3>Monk Fruit Wellness</h3>
           <p>Clean sweetness for tea, coffee, desserts, and active lifestyles.</p>
         </div>
@@ -48,7 +49,6 @@
     </div>
   </section>
 
-  <!-- Feature cards -->
   <section class="feature-section">
     <div class="container feature-grid">
       <div class="feature-card" *ngFor="let item of features">
@@ -59,7 +59,6 @@
     </div>
   </section>
 
-  <!-- Products -->
   <section class="products-section" id="products">
     <div class="container">
       <div class="section-heading">
@@ -91,7 +90,6 @@
     </div>
   </section>
 
-  <!-- Why choose us -->
   <section class="why-section" id="why-us">
     <div class="container">
       <div class="section-heading center">
@@ -127,7 +125,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer" id="footer">
     <div class="container footer-grid">
       <div>
@@ -152,4 +149,4 @@
     </div>
   </footer>
 
-</ion-content>
+</div>
