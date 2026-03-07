@@ -1,0 +1,33 @@
+<div class="products-page">
+  <app-header></app-header>
+
+  <section class="products-hero">
+    <div class="container">
+      <div class="section-heading center">
+        <p class="section-tag">OUR PRODUCTS</p>
+        <h1>Monk Fruit Based Everyday Essentials</h1>
+        <p>
+          Explore our premium range of monk fruit sweeteners and wellness drinks.
+        </p>
+      </div>
+
+      <div class="products-grid">
+        <div class="product-card" *ngFor="let product of products">
+          <div class="product-image-wrap">
+            <img [src]="product.image" [alt]="product.name" />
+          </div>
+
+          <div class="product-content">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.description }}</p>
+
+            <div class="product-bottom">
+              <span class="price">₹{{ product.price }}</span>
+              <button class="primary-btn small-btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

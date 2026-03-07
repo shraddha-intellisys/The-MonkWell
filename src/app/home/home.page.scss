@@ -101,7 +101,7 @@
 
 .hero-section {
   padding: 80px 0 50px;
-  background: linear-gradient(180deg, #fffdf8 0%, #f8f3ea 100%);
+  background: linear-gradient(180deg,  #f4ede1 100%);
 }
 
 .hero-grid {
@@ -169,8 +169,8 @@
 }
 
 .wellness-image {
-  width: 100%;
-  max-width: 320px;
+  width: 110%;
+  max-width: 800px;
   height: auto;
   display: block;
   margin: 0 auto 16px;
@@ -285,7 +285,7 @@
 }
 
 .product-image-wrap {
-  background: #f8f3ea;
+  background: #f4ede1;
   padding: 22px;
   text-align: center;
   position: relative;
@@ -293,7 +293,7 @@
 
 .product-image-wrap img {
   width: 100%;
-  max-width: 220px;
+  max-width: 500px;
   height: 220px;
   object-fit: contain;
   display: block;

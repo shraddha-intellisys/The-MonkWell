@@ -1,0 +1,149 @@
+<div class="why-us-page">
+  <app-header></app-header>
+
+  <!-- Hero -->
+  <section class="why-hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <p class="section-tag">WHY THE MONKWELL</p>
+        <h1>Sweetness That Supports a Better Lifestyle</h1>
+        <p class="hero-text">
+          At The MonkWell, we believe sweetness should feel modern, clean, and
+          intentional. Our products are designed for people who want better daily
+          choices without giving up taste, comfort, or experience.
+        </p>
+
+        <div class="hero-points">
+          <span>Natural Sweetness</span>
+          <span>Wellness Focused</span>
+          <span>Everyday Use</span>
+        </div>
+      </div>
+
+      <div class="hero-image-wrap">
+        <img src="assets/images/whyUs.png" alt="Monk Fruit Wellness" class="hero-image" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Reason cards -->
+  <section class="reasons-section">
+    <div class="container">
+      <div class="section-heading center">
+        <p class="section-tag">WHAT MAKES US DIFFERENT</p>
+        <h2>Why Customers Choose The MonkWell</h2>
+        <p>
+          We are building more than products. We are building a cleaner, smarter,
+          and more premium wellness experience.
+        </p>
+      </div>
+
+      <div class="reasons-grid">
+        <div class="reason-card" *ngFor="let reason of reasons">
+          <ion-icon [name]="reason.icon" class="reason-icon"></ion-icon>
+          <h3>{{ reason.title }}</h3>
+          <p>{{ reason.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="mission-section">
+    <div class="container mission-grid">
+      <div class="mission-image-wrap">
+        <img src="assets/images/whyUs.png" alt="Healthy Lifestyle" class="mission-image" />
+      </div>
+
+      <div class="mission-content">
+        <p class="section-tag">OUR MISSION</p>
+        <h2>Built for Modern Wellness</h2>
+        <p>
+          The MonkWell was created for people who want a more conscious approach
+          to sweetness. Our brand stands for balance, simplicity, and premium
+          everyday choices that feel lighter and more intentional.
+        </p>
+        <p>
+          We focus on products that fit naturally into tea, coffee, wellness
+          drinks, desserts, and modern lifestyles while keeping the experience
+          elegant and approachable.
+        </p>
+
+        <div class="value-box">
+          <h3>What We Stand For</h3>
+          <ul>
+            <li *ngFor="let value of values">{{ value }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Natural ingredient section -->
+  <section class="ingredient-section">
+    <div class="container ingredient-grid">
+      <div class="ingredient-content">
+        <p class="section-tag">NATURAL FOUNDATION</p>
+        <h2>Inspired by Nature, Designed for Daily Life</h2>
+        <p>
+          Our approach begins with the idea of natural sweetness and turns it into
+          products that feel relevant for modern routines. From the ingredient
+          story to the brand experience, every part is built to feel cleaner,
+          softer, and more premium.
+        </p>
+      </div>
+
+      <div class="ingredient-image-wrap">
+        <img src="assets/images/whyUs.png" alt="Fresh Monk Fruit" class="ingredient-image" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison -->
+  <section class="comparison-section">
+    <div class="container">
+      <div class="section-heading center">
+        <p class="section-tag">THE MONKWELL DIFFERENCE</p>
+        <h2>More Than Just Sweetness</h2>
+      </div>
+
+      <div class="comparison-grid">
+        <div class="comparison-card">
+          <h3>Traditional Sweet Products</h3>
+          <ul>
+            <li>Often feel overly processed</li>
+            <li>Limited wellness appeal</li>
+            <li>Generic brand experience</li>
+            <li>Less aligned with mindful daily routines</li>
+          </ul>
+        </div>
+
+        <div class="comparison-card highlight">
+          <h3>The MonkWell</h3>
+          <ul>
+            <li>Cleaner and more mindful positioning</li>
+            <li>Made for modern tea, coffee, and drink habits</li>
+            <li>Premium wellness-first identity</li>
+            <li>Designed for conscious consumers</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing -->
+  <section class="closing-section">
+    <div class="container">
+      <div class="closing-box">
+        <p class="section-tag">WHY IT MATTERS</p>
+        <h2>Because Everyday Choices Shape Better Living</h2>
+        <p>
+          The MonkWell is about making sweetness feel lighter, smarter, and more
+          intentional. We want every product to support a lifestyle that values
+          wellness, simplicity, and better everyday experiences.
+        </p>
+        <button class="primary-btn">Explore Products</button>
+      </div>
+    </div>
+  </section>
+</div>
