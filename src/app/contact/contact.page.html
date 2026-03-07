@@ -90,9 +90,15 @@
             ></textarea>
           </div>
 
-          <button class="primary-btn" type="submit">
-            Send Message
-          </button>
+          <div class="submit-btn-wrapper">
+            <button class="primary-btn" type="submit">
+              Send Message
+            </button>
+
+            <span class="mini-popup" *ngIf="showPopup">
+              Message sent successfully
+            </span>
+          </div>
         </form>
       </div>
     </div>

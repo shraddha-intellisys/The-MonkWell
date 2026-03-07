@@ -19,6 +19,8 @@ export class ContactPage {
     message: ''
   };
 
+  showPopup = false;
+
   contactCards = [
     {
       icon: 'mail-outline',
@@ -54,12 +56,18 @@ export class ContactPage {
 
   submitForm() {
     console.log('Contact form submitted:', this.formData);
-    alert('Your message has been submitted successfully.');
+
+    this.showPopup = true;
+
     this.formData = {
       name: '',
       email: '',
       subject: '',
       message: ''
     };
+
+    setTimeout(() => {
+      this.showPopup = false;
+    }, 1500);
   }
 }

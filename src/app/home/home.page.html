@@ -1,5 +1,9 @@
 <div class="home-page">
 
+  <div class="top-strip">
+    Free shipping on orders above ₹999 | Clean sweetness for everyday wellness
+  </div>
+
   <app-header class="header">
     <div class="container header-inner">
       <div class="logo">The MonkWell.</div>
@@ -7,11 +11,12 @@
       <nav class="nav-links">
         <a routerLink="/">Home</a>
         <a routerLink="/products">Products</a>
-        <a routerLink="#why-us">Why Us</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#faq">FAQ</a>
         <a href="#footer">Contact</a>
       </nav>
 
-      <button class="primary-btn">Shop Now</button>
+      <button class="primary-btn">🛒 Cart</button>
     </div>
   </app-header>
 
@@ -26,8 +31,10 @@
         </p>
 
         <div class="hero-buttons">
-          <button class="primary-btn">Explore Products</button>
-          <button class="secondary-btn">Learn More</button>
+          <button class="primary-btn" routerLink="/products">Explore Products</button>
+          <button class="secondary-btn" onclick="document.getElementById('why-us')?.scrollIntoView({behavior: 'smooth'})">
+            Learn More
+          </button>
         </div>
 
         <div class="trust-badges">
@@ -36,12 +43,10 @@
       </div>
 
       <div class="hero-right">
-
         <img src="assets/images/doll.png" class="wellness-image" alt="Monk Fruit Wellness" />
         <h3>Monk Fruit Wellness</h3>
         <p>Clean sweetness for tea, coffee, desserts, and active lifestyles.</p>
       </div>
-
     </div>
   </section>
 
@@ -51,6 +56,24 @@
         <ion-icon [name]="item.icon" class="feature-icon"></ion-icon>
         <h3>{{ item.title }}</h3>
         <p>{{ item.description }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="shop-need-section">
+    <div class="container">
+      <div class="section-heading center">
+        <p class="section-tag">SHOP BY NEED</p>
+        <h2>Choose What Fits Your Lifestyle</h2>
+        <p>From tea lovers to fitness-conscious users, we have sweetness made for every routine.</p>
+      </div>
+
+      <div class="shop-need-grid">
+        <div class="shop-need-card" *ngFor="let need of shopByNeeds">
+          <ion-icon [name]="need.icon" class="shop-need-icon"></ion-icon>
+          <h3>{{ need.title }}</h3>
+          <p>{{ need.description }}</p>
+        </div>
       </div>
     </div>
   </section>
@@ -78,9 +101,35 @@
 
             <div class="product-bottom">
               <span class="price">₹{{ product.price }}</span>
-              <button class="primary-btn small-btn">Add to Cart</button>
+
+              <div class="cart-btn-wrapper">
+                <button class="primary-btn small-btn" (click)="addToCart(product)">
+                  Add to Cart
+                </button>
+
+                <span class="mini-popup" *ngIf="activePopupProduct === product.name">
+                  Added to cart
+                </span>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="use-section">
+    <div class="container">
+      <div class="section-heading center">
+        <p class="section-tag">HOW TO USE</p>
+        <h2>Easy to Add to Your Everyday Routine</h2>
+      </div>
+
+      <div class="use-grid">
+        <div class="use-card" *ngFor="let use of useCases">
+          <ion-icon [name]="use.icon" class="use-icon"></ion-icon>
+          <h3>{{ use.title }}</h3>
+          <p>{{ use.description }}</p>
         </div>
       </div>
     </div>
@@ -121,6 +170,54 @@
     </div>
   </section>
 
+  <section class="testimonial-section">
+    <div class="container">
+      <div class="section-heading center">
+        <p class="section-tag">CUSTOMER LOVE</p>
+        <h2>What People Are Saying</h2>
+      </div>
+
+      <div class="testimonial-grid">
+        <div class="testimonial-card" *ngFor="let review of testimonials">
+          <div class="stars">{{ review.rating }}</div>
+          <p class="testimonial-text">“{{ review.text }}”</p>
+          <h4>{{ review.name }}</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-heading center">
+        <p class="section-tag">FAQ</p>
+        <h2>Common Questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item" *ngFor="let faq of faqs">
+          <h3>{{ faq.question }}</h3>
+          <p>{{ faq.answer }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container cta-box">
+      <div>
+        <p class="section-tag">START TODAY</p>
+        <h2>Bring Clean Sweetness Into Your Daily Routine</h2>
+        <p>Explore premium monk fruit products designed for taste, balance, and modern wellness.</p>
+      </div>
+
+      <div class="cta-buttons">
+        <button class="primary-btn" routerLink="/products">Shop Now</button>
+        <button class="secondary-btn">View Best Sellers</button>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer" id="footer">
     <div class="container footer-grid">
       <div>
@@ -135,6 +232,7 @@
         <p>Home</p>
         <p>Products</p>
         <p>Why Us</p>
+        <p>FAQ</p>
       </div>
 
       <div>
@@ -146,3 +244,4 @@
   </footer>
 
 </div>
+<app-chatbot></app-chatbot>

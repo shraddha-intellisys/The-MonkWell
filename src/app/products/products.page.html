@@ -22,8 +22,21 @@
             <p>{{ product.description }}</p>
 
             <div class="product-bottom">
-              <span class="price">₹{{ product.price }}</span>
-              <button class="primary-btn small-btn">Add to Cart</button>
+  <span class="price">₹{{ product.price }}</span>
+
+  <div class="cart-btn-wrapper">
+    <button class="primary-btn small-btn" (click)="addToCart(product)">
+      Add to Cart
+    </button>
+
+    <span
+      class="mini-popup"
+      *ngIf="activePopupProduct === product.name"
+    >
+      Added to cart
+    </span>
+  </div>
+
             </div>
           </div>
         </div>

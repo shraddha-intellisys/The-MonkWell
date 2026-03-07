@@ -1,0 +1,28 @@
+<div class="address-page">
+  <app-header></app-header>
+
+  <section class="address-section">
+    <div class="container">
+      <h1>Saved Address</h1>
+
+      <div class="address-form">
+        <input type="text" placeholder="Full Name" [(ngModel)]="newAddress.name" />
+        <input type="text" placeholder="Phone" [(ngModel)]="newAddress.phone" />
+        <input type="text" placeholder="Address" [(ngModel)]="newAddress.address" />
+        <input type="text" placeholder="City" [(ngModel)]="newAddress.city" />
+        <input type="text" placeholder="Pincode" [(ngModel)]="newAddress.pincode" />
+
+        <button (click)="saveAddress()">Save Address</button>
+      </div>
+
+      <div class="saved-list">
+        <div *ngFor="let address of addresses" class="address-card">
+          <h3>{{ address.name }}</h3>
+          <p>{{ address.address }}</p>
+          <p>{{ address.city }} - {{ address.pincode }}</p>
+          <p>{{ address.phone }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { IonicModule } from '@ionic/angular';
 import { HeaderComponent } from '../components/header/header.component';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule, RouterModule, HeaderComponent],
+  imports: [CommonModule, RouterModule, IonicModule, HeaderComponent],
   templateUrl: './products.page.html',
   styleUrls: ['./products.page.scss']
 })
@@ -43,4 +45,20 @@ export class ProductsPage {
       image: 'assets/images/syrup.png'
     }
   ];
+
+  activePopupProduct: string | null = null;
+
+  constructor(private cartService: CartService) {}
+
+  addToCart(product: any) {
+    this.cartService.addToCart(product);
+
+    this.activePopupProduct = product.name;
+
+    setTimeout(() => {
+      if (this.activePopupProduct === product.name) {
+        this.activePopupProduct = null;
+      }
+    }, 1500);
+  }
 }

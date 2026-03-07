@@ -134,4 +134,54 @@
     flex-direction: column;
     align-items: flex-start;
   }
+  .cart-btn-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.mini-popup {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 8px);
+  background: #5e4823;
+  color: white;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  animation: popupFade 1.5s ease;
+  z-index: 5;
+}
+
+.mini-popup::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: 16px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: #5e4823 transparent transparent transparent;
+}
+
+@keyframes popupFade {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  85% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
 }

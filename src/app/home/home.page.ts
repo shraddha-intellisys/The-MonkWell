@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from '../components/header/header.component';
+import { CartService } from '../services/cart.service';
+import { ChatbotComponent } from '../components/chatbot/chatbot.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone: true,
-  imports: [CommonModule, IonicModule, RouterModule, HeaderComponent],
+  imports: [CommonModule, IonicModule, RouterModule, HeaderComponent, ChatbotComponent],
 })
 export class HomePage {
   trustBadges = [
@@ -43,6 +45,29 @@ export class HomePage {
     }
   ];
 
+  shopByNeeds = [
+    {
+      icon: 'cafe-outline',
+      title: 'For Tea Lovers',
+      description: 'A smooth sweetness for your everyday tea moments.'
+    },
+    {
+      icon: 'moon-outline',
+      title: 'For Coffee Lovers',
+      description: 'Enjoy rich coffee taste without regular sugar guilt.'
+    },
+    {
+      icon: 'barbell-outline',
+      title: 'For Fitness Goals',
+      description: 'A better fit for active and wellness-focused lifestyles.'
+    },
+    {
+      icon: 'ice-cream-outline',
+      title: 'For Desserts',
+      description: 'Great for pancakes, sweet dishes, and creative recipes.'
+    }
+  ];
+
   products = [
     {
       name: 'Monk Fruit Tea Sweetener',
@@ -53,7 +78,7 @@ export class HomePage {
     },
     {
       name: 'Monk Fruit Coffee Sweetener',
-      description: 'Enjoy coffee with rich taste and no sugar guilt.',
+      description: 'Enjoy coffee with rich taste and no sugar guilt and best for weight management.',
       price: 399,
       image: 'assets/images/coffee.png',
       badge: 'Coffee Favorite'
@@ -80,4 +105,80 @@ export class HomePage {
       badge: 'Active Choice'
     }
   ];
+
+  useCases = [
+    {
+      icon: 'cafe-outline',
+      title: 'Tea & Coffee',
+      description: 'Stir into your favorite hot drinks for smooth everyday sweetness.'
+    },
+    {
+      icon: 'restaurant-outline',
+      title: 'Desserts',
+      description: 'Use in pancakes, sweets, bowls, and healthy homemade treats.'
+    },
+    {
+      icon: 'water-outline',
+      title: 'Cold Drinks',
+      description: 'Perfect for lemonade, mocktails, and refreshing chilled beverages.'
+    },
+    {
+      icon: 'fitness-outline',
+      title: 'Daily Wellness',
+      description: 'A great option for mindful food choices and modern routines.'
+    }
+  ];
+
+  testimonials = [
+    {
+      name: 'Priya S.',
+      rating: '★★★★★',
+      text: 'I loved how clean and light it tastes in my morning tea.'
+    },
+    {
+      name: 'Rahul M.',
+      rating: '★★★★★',
+      text: 'Much better than regular sweeteners and the packaging feels premium.'
+    },
+    {
+      name: 'Ananya K.',
+      rating: '★★★★★',
+      text: 'The lemonade mix is refreshing and perfect for summer.'
+    }
+  ];
+
+  faqs = [
+    {
+      question: 'What is monk fruit sweetener?',
+      answer: 'It is a natural sweetener alternative designed for cleaner everyday sweetness.'
+    },
+    {
+      question: 'Can I use it in hot drinks?',
+      answer: 'Yes, it works well in tea, coffee, and other warm beverages.'
+    },
+    {
+      question: 'Does it have a bitter aftertaste?',
+      answer: 'Our products are designed to give a smooth and pleasant taste experience.'
+    },
+    {
+      question: 'Is it suitable for daily use?',
+      answer: 'Yes, it is made for convenient daily use across drinks and food.'
+    }
+  ];
+
+  activePopupProduct: string | null = null;
+
+  constructor(private cartService: CartService) {}
+
+  addToCart(product: any) {
+    this.cartService.addToCart(product);
+
+    this.activePopupProduct = product.name;
+
+    setTimeout(() => {
+      if (this.activePopupProduct === product.name) {
+        this.activePopupProduct = null;
+      }
+    }, 1500);
+  }
 }

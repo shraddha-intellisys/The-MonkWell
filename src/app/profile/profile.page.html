@@ -1,0 +1,40 @@
+<div class="profile-page">
+  <app-header></app-header>
+
+  <section class="profile-section">
+    <div class="container">
+      <h1>My Account</h1>
+
+      <div class="profile-card">
+        <div class="avatar">👤</div>
+
+        <div class="user-info">
+          <h2>{{ user.name }}</h2>
+          <p>{{ user.email }}</p>
+        </div>
+      </div>
+
+      <div class="profile-menu">
+        <a routerLink="/orders" class="menu-card">
+          <div>
+            <h3>My Orders</h3>
+            <p>View all your placed orders</p>
+          </div>
+          <span>›</span>
+        </a>
+
+        <a routerLink="/address" class="menu-card">
+          <div>
+            <h3>Saved Address</h3>
+            <p>Manage your saved delivery addresses</p>
+          </div>
+          <span>›</span>
+        </a>
+
+        <button class="logout-btn" (click)="logout()">
+          Logout
+        </button>
+      </div>
+    </div>
+  </section>
+</div>

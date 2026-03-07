@@ -1,0 +1,54 @@
+<div class="orders-page">
+  <app-header></app-header>
+
+  <div class="container">
+    <div class="orders-heading">
+      <h1>My Orders</h1>
+      <p>Track your placed MonkWell orders here.</p>
+    </div>
+
+    <div *ngIf="orders.length === 0" class="empty-orders">
+      <h3>No orders yet</h3>
+      <p>Your placed orders will appear here.</p>
+    </div>
+
+    <div *ngFor="let order of orders" class="order-card">
+      <div class="order-top">
+        <div>
+          <h3>Order ID: {{ order.id }}</h3>
+          <p>{{ order.orderDate }}</p>
+        </div>
+        <span class="status">{{ order.status }}</span>
+      </div>
+
+      <div class="order-items">
+        <div *ngFor="let item of order.items" class="order-item">
+          <img [src]="item.image" [alt]="item.name" />
+          <div class="item-details">
+            <h4>{{ item.name }}</h4>
+            <p>Quantity: {{ item.quantity }}</p>
+            <p>Price: ₹{{ item.price }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="customer-info">
+        <h4>Delivery Details</h4>
+        <p><strong>Name:</strong> {{ order.customer.fullName }}</p>
+        <p><strong>Email:</strong> {{ order.customer.email }}</p>
+        <p><strong>Phone:</strong> {{ order.customer.phone }}</p>
+        <p><strong>Address:</strong> {{ order.customer.address }}</p>
+        <p><strong>City:</strong> {{ order.customer.city }}</p>
+        <p><strong>State:</strong> {{ order.customer.state }}</p>
+        <p><strong>Pincode:</strong> {{ order.customer.pincode }}</p>
+        <p><strong>Payment:</strong> {{ order.customer.paymentMethod }}</p>
+      </div>
+
+      <div class="order-summary">
+        <p><strong>Subtotal:</strong> ₹{{ order.subtotal }}</p>
+        <p><strong>Delivery:</strong> ₹{{ order.deliveryCharge }}</p>
+        <h3><strong>Total:</strong> ₹{{ order.total }}</h3>
+      </div>
+    </div>
+  </div>
+</div>
